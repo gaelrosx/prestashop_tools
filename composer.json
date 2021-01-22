@@ -1,0 +1,13 @@
+{
+    "name": "gerson/prestashop_tools",
+    "description": "herramisntas para hacer cambios masivos",
+    "authors": [
+        {
+            "name": "Gerson Gonzalez",
+            "email": "gaelrosx@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.16"
+    }
+}

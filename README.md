@@ -1,2 +1,3 @@
 # prestashop_tools
-permite hacer cambios de manera masiva en sitios prestashop
+
+herramientas para realizar cambios en prestashop
