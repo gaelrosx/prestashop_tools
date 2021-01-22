@@ -1,34 +1,32 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
+require 'vendor/autoload.php';
 
-define('EOL',(PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
-date_default_timezone_set('Europe/London');
-
-/** Include PHPExcel_IOFactory */
-require_once dirname(__FILE__) . '/libs/PHPExcel/IOFactory.php';
-	require_once('conexion.php');
-	$conn=new Conexion();
-	$link = $conn->conectarse();
+error_reporting(E_ALL ^ E_NOTICE);
 
 
 
-	$fileTmpPath = $_FILES['file']['tmp_name'];
-	 
-	$fileName = $_FILES['file']['name'];
-	$fileSize = $_FILES['file']['size'];
-	$fileType = $_FILES['file']['type'];
-	$fileNameCmps = explode(".", $fileName);
-	$fileExtension = strtolower(end($fileNameCmps));
+
+$fileTmpPath = $_FILES['file']['tmp_name'];
+
+$fileName = $_FILES['file']['name'];
+$fileSize = $_FILES['file']['size'];
+$fileType = $_FILES['file']['type'];
+$fileNameCmps = explode(".", $fileName);
+$fileExtension = strtolower(end($fileNameCmps));
 
 
-	
-	
-   $objPHPExcel = PHPExcel_IOFactory::load('products.xls');
+$inputFileName = __DIR__ . '/products.xls';
+//$helper->log('Loading file ' . pathinfo($inputFileName, PATHINFO_BASENAME) . ' using IOFactory to identify the format');
+$spreadsheet = IOFactory::load($fileTmpPath);
+$sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
+foreach($sheetData as $key => $row )
+{
+	var_dump($key,$row);
+	echo "<br>";
+}
 
-   var_dump( $objPHPExcel );
 
 
 
