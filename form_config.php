@@ -1,7 +1,6 @@
 <?php 
-    error_reporting(E_ALL ^ E_NOTICE);
-    ini_set('display_errors', '1');
-   
+   error_reporting(E_ALL ^ E_NOTICE);
+   ini_set('display_errors', '1');
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -27,12 +26,21 @@
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="masthead clearfix">
-                    <div class="inner">
+                    <div class="inner mb-5">
                         <h3 class="masthead-brand">CONFIGURACION DE CONEXION A BASE DE DATOS</h3>
                     </div>
                 </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div style="position: absolute; top: -71px;">
+                            <img src="img/logo.png">
+                        </div>
+                    </div>
+                    
+                </div>
 
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-md-12">
                         <form method="post" action="save_config.php" onsubmit="return formValidation()">
                             <div class="row">
@@ -57,14 +65,20 @@
                         </form>
                     </div>
                 </div>
-            </div>	
+
+                <div class="row mt-5">
+                    <span class="col-md-12" style="display: grid;">
+                        <h3 class="masthead-brand">Valido para prestashop 1.7</h3>
+                    </span>
+                </div>
+
 		
       
-      <div class="mastfoot">
-        <div class="inner">
-          <p>&copy; gaelrosx@gmail.com.</p>
-        </div>
-      </div>
+                <div class="mastfoot">
+                    <div class="inner">
+                    <p>&copy; Suir Comunicación</p>
+                    </div>
+                </div>
       
   </div>
 </div>
@@ -73,6 +87,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	  
+
 <script>
     var QueryString = function () {
         var query_string = {};
@@ -110,24 +125,23 @@
     });
     
 
-function formValidation(){
-    
-    if( $('#user').val().length == 0 || $('#password').val().length == 0 || $('#db').val().length == 0)
-    {
-        Swal.fire({
-		  icon: 'error',
-		  title: 'Oops...',
-		  text: 'Parametros Incompletos',
-		  footer: 'Por favor completa todos los campos'
-		})
-        return false;
-    }else{
-        return true;
-    }
+    function formValidation(){
+        
+        if( $('#user').val().length == 0 || $('#password').val().length == 0 || $('#db').val().length == 0)
+        {
+            Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Parametros Incompletos',
+            footer: 'Por favor completa todos los campos'
+            })
+            return false;
+        }else{
+            return true;
+        }
 
-    
-}
-</script>	  
-	  
+        
+    }
+</script>
 	  
 </html>
