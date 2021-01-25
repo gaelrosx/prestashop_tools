@@ -2,7 +2,7 @@
 	header('Content-type:application/xls');
 	header('Content-Disposition: attachment; filename=products_inactives.xls');
 
-	require_once('conexion.php');
+	require_once('libs/conexion.php');
 	$conn=new Conexion();
 	$link = $conn->conectarse();
 

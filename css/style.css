@@ -134,17 +134,28 @@ body {
   #subscribeModal .form-control:focus {
     border-color: #49506a; }
 
+  .tab-content {
+    width: -webkit-fill-available;
+  }    
+  .form-control-file, .form-control-range {
+    display: initial; 
+    width: 48%;
+}
 /*
  * Affix and center
  */
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
+    /*position: fixed;*/
+    top: 0; 
+  }
+  
+  /*.mastfoot {
     position: fixed;
-    top: 0; }
-  .mastfoot {
-    position: fixed;
-    bottom: 0; }
+    bottom: 0; 
+  }*/
+  
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle; }

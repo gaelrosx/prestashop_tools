@@ -1,13 +1,22 @@
 <?php
-	header('Content-type:application/xls');
-	header('Content-Disposition: attachment; filename=products_actives.xls');
+	   ini_set('display_errors', '1');
 
-	require_once('conexion.php');
-	$conn=new Conexion();
-	$link = $conn->conectarse();
+	   error_reporting(E_ALL ^ E_NOTICE);
+    
 
-	$query="select * from  view_metas_products_actives";
-	$result=mysqli_query($link, $query);
+	//header('Content-type:application/xls');
+	//header('Content-Disposition: attachment; filename=products_actives.xlsx');
+
+	require_once('libs/query.php');
+	//$conn=new Conexion();
+	//$link = $conn->conectarse();
+
+	//$query="select * from  view_metas_products_actives";
+	//$result=mysqli_query($link, $query);
+	$query = new Query();
+
+	$result = $query->producs_actives();
+
 ?>
 
 <table border="1">
@@ -19,7 +28,8 @@
 		<th>Activo</th>
 	</tr>
 	<?php
-		while ($row=mysqli_fetch_assoc($result)) {
+	
+		while ($row = $result->fetch_assoc()) {
 			?>
 				<tr>
 					<td><?php echo $row['id_product']; ?></td>
@@ -30,7 +40,7 @@
 				</tr>	
 
 			<?php
-		}
+		} 
 
 	?>
 </table>
