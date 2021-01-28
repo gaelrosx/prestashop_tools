@@ -15,14 +15,14 @@
 	
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 
-	header('Content-Disposition: attachment;filename="active_products.xlsx"');
+	header('Content-Disposition: attachment;filename="inactive_products.xlsx"');
 	
 	header('Cache-Control: max-age=0');
 
 	
 	$query = new Query();
 
-	$results = $query->active_inactive_producs( 1 );
+	$results = $query->active_inactive_producs( 0 );
 
 	$spread = new Spreadsheet();
 

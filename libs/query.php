@@ -285,8 +285,6 @@
                 id_lang = ?;
             ";
 
-            //var_dump( $query);d();
-
             try{
 
                 $stmt =  $this->link->prepare( $query );
@@ -295,11 +293,27 @@
 
                 $stmt->execute();
 
+                $this-> update_name_manufacturer( $row );
+
             } catch (Exception $e ){
 
                 var_dump('error al actualizando metas de  manufacturer: ',  $e->getMessage() );
 
             } 
+        }
+
+        public function update_name_manufacturer( $row )
+        {
+            $query = "update ps_manufacturer set
+                name = ?
+                where id_manufacturer = ?;";
+
+            $stmt =  $this->link->prepare( $query );
+
+            $stmt->bind_param('si', $row["C"], $row["A"] );
+
+            $stmt->execute();
+
         }
 
         public static function myGetResult( $Statement ) {

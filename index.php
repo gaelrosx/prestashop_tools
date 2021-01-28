@@ -191,22 +191,101 @@
     });
 
 	
-    function fileValidation( fileID ){
+    function fileValidation( fileID, module_name ){
         var fileInput = document.getElementById( fileID );
         var filePath = fileInput.value;
         var allowedExtensions = /(.xls|.xlsx)$/i;
         if(!allowedExtensions.exec(filePath)){
             Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Archivo Invalido',
-            footer: 'Solo se permite subir archivos .xls, .xlsx'
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Archivo Invalido',
+                footer: 'Solo se permite subir archivos .xls, .xlsx'
             })
             fileInput.value = '';
             return false;
         }else{
-        return true;
+
+            return ValidateFileName( fileID, module_name );
+
+            //return false;
         }
+    }
+
+    function ValidateFileName( fileID, module_name )
+    {   
+        var fileInput = document.getElementById( fileID );
+        var filePath = fileInput.value;
+        fileName = filePath.substr(filePath.lastIndexOf("\\") + 1);
+        /*if( module_name == 'products' && ( fileName == 'active_products.xlsx' || fileName == 'inactive_products.xlsx') )
+        {
+            return true; 
+
+        }*/
+
+        switch(module_name) {
+            case 'products':
+                if ( fileName !== 'active_products.xlsx' && fileName !== 'inactive_products.xlsx' )
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Archivo Invalido para el Modulo Productos',
+                        footer: 'Solo se permite subir archivos con los nombres: active_products.xlsx y inactive_products.xlsx'
+                    });
+
+                    return false;
+                }
+                return true;
+            
+            case 'categories':
+                if ( fileName !== 'categories.xlsx' )
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Archivo Invalido para el Modulo Categorias',
+                        footer: 'Solo se permite subir archivos con el nombre: categories.xlsx'
+                    });
+
+                    return false;
+                }
+                return true;
+            
+            case 'cms':
+                if ( fileName !== 'cms.xlsx' )
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Archivo Invalido para el Modulo CMS',
+                        footer: 'Solo se permite subir archivos con el nombre: cms.xlsx'
+                    });
+
+                    return false;
+                }
+                return true;
+            
+            case 'manufacturer':
+                if ( fileName !== 'manufacturer.xlsx' )
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Archivo Invalido para el Modulo Marcas',
+                        footer: 'Solo se permite subir archivos con el nombre: manufacturer.xlsx'
+                    });
+
+                    return false;
+                }
+                return true;
+           
+            default:
+                return false;
+        }
+
+        
+
     }
 </script>	  
 	  

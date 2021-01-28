@@ -32,7 +32,7 @@
                 
                 <div class="text-center">
                     
-                    <form method="POST" action="imports/update_products.php" enctype="multipart/form-data" onsubmit="return fileValidation('file_products')">
+                    <form method="POST" action="imports/update_products.php" enctype="multipart/form-data" onsubmit="return fileValidation('file_products','products')">
                         <div class="form-group">
         
                             <input type="file" class="form-control-file" name="file" id="file_products" accept=".xlsx">

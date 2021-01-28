@@ -30,7 +30,7 @@
                 <p class="lead cover-copy"><b style="color: #01040c; font-weight: bold;">IMPORTANTE:</b> No modificar el orden de las columnas del archivo generado, ni eliminar columnas, ya que de hacerlo fallara el script.</p>
                 <p class="lead">
                 
-                <form method="POST" action="imports/update_categories.php" enctype="multipart/form-data" onsubmit="return fileValidation('file_categories')">
+                <form method="POST" action="imports/update_categories.php" enctype="multipart/form-data" onsubmit="return fileValidation('file_categories','categories')">
                     <div class="form-group">
     
                         <input type="file" class="form-control-file" name="file" id="file_categories" accept=".xlsx">

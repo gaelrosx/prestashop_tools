@@ -4,7 +4,6 @@
 
         public static function exist_pasword()
         {
-            //file_exists();
             return file_exists(self::getBaseRouteFile().'/parameters.txt');
         }
 
