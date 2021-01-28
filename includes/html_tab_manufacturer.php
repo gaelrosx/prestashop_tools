@@ -1,4 +1,10 @@
 <div class="tab-pane fade show" id="manufacturer-content" role="tabpanel" aria-labelledby="manufacturer-tab">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-module"> MODULO MARCAS</h1>
+        </div>
+    </div>
+    
     <ul class="nav nav-tabs" id="ul-manufacturer" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="download-manufacturer-tab" data-toggle="tab" href="#download-manufacturer-files" role="tab" aria-controls="download-manufacturer-files" aria-selected="true">Descargar Archivos</a>

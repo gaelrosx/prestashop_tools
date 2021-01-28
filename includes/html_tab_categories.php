@@ -1,4 +1,10 @@
 <div class="tab-pane fade show" id="categories-content" role="tabpanel" aria-labelledby="categories-tab">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-module"> MODULO CATEGORIAS</h1>
+        </div>
+    </div>
+    
     <ul class="nav nav-tabs" id="ul-categories" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="download-categories-tab" data-toggle="tab" href="#download-categories-files" role="tab" aria-controls="download-categories-files" aria-selected="true">Descargar Archivos</a>

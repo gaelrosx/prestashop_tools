@@ -1,4 +1,10 @@
 <div class="tab-pane fade show" id="cms-content" role="tabpanel" aria-labelledby="cms-tab">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-module"> MODULO CMS</h1>
+        </div>
+    </div>
+    
     <ul class="nav nav-tabs" id="ul-cms" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="download-cms-tab" data-toggle="tab" href="#download-cms-files" role="tab" aria-controls="download-cms-files" aria-selected="true">Descargar Archivos</a>

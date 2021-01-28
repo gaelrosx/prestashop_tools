@@ -1,5 +1,13 @@
+
+
+
 <div class="tab-pane fade show active" id="products-content" role="tabpanel" aria-labelledby="products-tab">
-    
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-module"> MODULO PRODUCTOS</h1>
+        </div>
+    </div>
+
     <ul class="nav nav-tabs" id="ul_products" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="download-products-tab" data-toggle="tab" href="#download-files-products" role="tab" aria-controls="download-files-products" aria-selected="true">Descargar Archivos</a>
