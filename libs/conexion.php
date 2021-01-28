@@ -11,7 +11,7 @@
 				
 				$params = Security::getParamsDb();
 
-				$this->ruta       ="172.17.0.2"; 
+				$this->ruta       = "localhost"; //"172.17.0.2"; 
 				
 				$this->user    = $params['user'];
 				
